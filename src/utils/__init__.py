@@ -5,5 +5,5 @@ __all__ = (
     "RateLimiter",
 )
 
-from .limiter_factory import rate_limiter_factory
+from .limiter_factory import rate_limit_hard, rate_limit_lite, rate_limiter_factory
 from .rate_limiter import RateLimiter

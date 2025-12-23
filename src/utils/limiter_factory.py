@@ -40,3 +40,9 @@ rate_limit_lite = rate_limiter_factory(
     max_requests=5,
     window_seconds=5,
 )
+
+rate_limit_hard = rate_limiter_factory(
+    endpoint="hard_request",
+    max_requests=3,
+    window_seconds=10,
+)
