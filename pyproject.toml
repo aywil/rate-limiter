@@ -1,0 +1,12 @@
+[project]
+name = "rate-limiter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "black>=25.12.0",
+    "fastapi>=0.127.0",
+    "redis>=7.1.0",
+    "uvicorn>=0.40.0",
+]
