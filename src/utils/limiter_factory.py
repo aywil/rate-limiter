@@ -33,3 +33,10 @@ def rate_limiter_factory(
             )
 
     return dependency
+
+
+rate_limit_lite = rate_limiter_factory(
+    endpoint="lite_request",
+    max_requests=5,
+    window_seconds=5,
+)
