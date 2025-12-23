@@ -24,7 +24,7 @@ app = FastAPI(lifespan=lifespan)
     dependencies=[Depends(rate_limit_lite)],
 )
 async def send_lite_request(
-    code: Annotated[str, Body(embed=True)],
+    send: Annotated[str, Body(embed=True)],
 ):
     ...
     return {"ok": True}
@@ -35,7 +35,7 @@ async def send_lite_request(
     dependencies=[Depends(rate_limit_hard)],
 )
 async def send_hard_request(
-    code: Annotated[str, Body(embed=True)],
+    send: Annotated[str, Body(embed=True)],
 ):
     ...
     return {"ok": True}
