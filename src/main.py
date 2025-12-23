@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from typing import Annotated
-from utils import rate_limit_lite
+from utils import rate_limit_hard, rate_limit_lite
 import uvicorn
 from fastapi import Body, Depends, FastAPI
 
@@ -23,6 +23,17 @@ app = FastAPI(lifespan=lifespan)
     dependencies=[Depends(rate_limit_lite)],
 )
 async def send_lite_request(
+    code: Annotated[str, Body(embed=True)],
+):
+    ...
+    return {"ok": True}
+
+
+@app.post(
+    "/hard_request",
+    dependencies=[Depends(rate_limit_hard)],
+)
+async def send_hard_request(
     code: Annotated[str, Body(embed=True)],
 ):
     ...
