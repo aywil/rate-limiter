@@ -1,6 +1,7 @@
 from typing import Annotated
 
 from fastapi import Depends, HTTPException, Request, status
+
 from dependencies import get_rate_limiter
 from utils.rate_limiter import RateLimiter
 

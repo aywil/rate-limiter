@@ -1,6 +1,6 @@
 from functools import lru_cache
-from db.database import get_redis
 
+from db.database import get_redis
 from utils.rate_limiter import RateLimiter
 
 

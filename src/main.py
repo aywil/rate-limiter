@@ -1,10 +1,11 @@
 from contextlib import asynccontextmanager
 from typing import Annotated
-from utils import rate_limit_hard, rate_limit_lite
+
 import uvicorn
 from fastapi import Body, Depends, FastAPI
 
 from db import get_redis
+from utils import rate_limit_hard, rate_limit_lite
 
 
 @asynccontextmanager
