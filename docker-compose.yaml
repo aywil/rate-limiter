@@ -5,6 +5,6 @@ services:
       - 6379:6379
 
   redis_gui:
-    image: redis/redis-insight
+    image: redis/redisinsight
     ports:
       - 5540:5540
