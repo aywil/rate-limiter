@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
+from typing import Annotated
+from utils import rate_limit_lite
 import uvicorn
-from fastapi import FastAPI
+from fastapi import Body, Depends, FastAPI
 
 from db import get_redis
 
@@ -14,6 +16,17 @@ async def lifespan(my_app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+
+@app.post(
+    "/lite_request",
+    dependencies=[Depends(rate_limit_lite)],
+)
+async def send_lite_request(
+    code: Annotated[str, Body(embed=True)],
+):
+    ...
+    return {"ok": True}
 
 
 if __name__ == "__main__":
