@@ -1,5 +1,5 @@
 from functools import lru_cache
-from redis import Redis
+from redis.asyncio import Redis
 
 
 @lru_cache
